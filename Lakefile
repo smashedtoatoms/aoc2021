@@ -1,0 +1,45 @@
+#|-*- mode:lisp -*-|#
+
+(task "install-dependencies"
+  ()
+  (sh "clpm bundle install" :echo t))
+
+(task "repl-slime"
+  ()
+  (sh (concatenate
+       'string
+       "clpm bundle exec --with-client --"
+       "  sbcl"
+       "    --eval \"(asdf:load-system :swank)\""
+       "    --eval \"(asdf:load-system :aoc2021)\""
+       "    --eval \"(asdf:load-system :aoc2021/test)\""
+       "    --eval \"(swank:create-server)\"")
+      :echo t))
+
+(task "repl"
+  ()
+  (sh (concatenate
+       'string
+       "clpm bundle exec --with-client --"
+       "  sbcl"
+       "    --eval \"(asdf:load-system :slynk)\""
+       "    --eval \"(asdf:load-system :aoc2021)\""
+       "    --eval \"(asdf:load-system :aoc2021/test)\""
+       "    --eval \"(slynk:create-server)\"")
+      :echo t))
+
+(task "test"
+  ()
+  (sh (concatenate
+       'string
+       "clpm bundle exec --with-client --"
+       "  sbcl"
+       "    --noinform"
+       "    --disable-debugger"
+       "    --eval \"(asdf:test-system :aoc2021)\" "
+       "    --eval \"(exit)\"")
+      :echo t))
+
+(task "default"
+  ("install-dependencies" "test")
+  ())

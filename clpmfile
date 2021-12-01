@@ -1,0 +1,13 @@
+;;; -*- Mode: common-lisp; -*-
+(:api-version "0.4")
+
+(:source "quicklisp" :url "https://quicklisp.common-lisp-project-index.org/" :type :ql-clpi)
+
+(:asd "aoc2021.asd")
+
+;; Dev Dependencies
+(:system :parachute)
+(:system :slynk)
+(:system :swank)
+
+;; Dependencies
