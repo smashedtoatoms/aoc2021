@@ -15,7 +15,8 @@
 
 (define-test "gets depth change for prod data"
   :parent all
-  (let* ((test-data (mapcar #'parse-integer (uiop:read-file-lines #p"inputs/day1.txt")))
+  (let* ((test-data (mapcar #'parse-integer
+                            (uiop:read-file-lines #p"inputs/day1.txt")))
         (result (get-depth-increases 1 test-data)))
     (is = 1448 result)))
 
@@ -27,7 +28,8 @@
 
 (define-test "gets shifting depth changes for prod data"
   :parent all
-  (let* ((test-data (mapcar #'parse-integer (uiop:read-file-lines #p"inputs/day1.txt")))
+  (let* ((test-data (mapcar #'parse-integer
+                            (uiop:read-file-lines #p"inputs/day1.txt")))
         (result (get-depth-increases 3 test-data)))
     (is = 1471 result)))
 
