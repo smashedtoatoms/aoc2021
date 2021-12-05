@@ -31,13 +31,12 @@
 
 :releases
 ("aoc2021.asd" :version :newest :source :implicit-file :systems
- ("aoc2021" "aoc2021/.vscode/alive/fasl/tmp" "aoc2021/src/common"
-  "aoc2021/src/day-1" "aoc2021/test" "aoc2021/test/all"))
+ ("aoc2021" "aoc2021/src/day-1" "aoc2021/src/day-2" "aoc2021/src/day-3"
+  "aoc2021/test" "aoc2021/test/all"))
 ("documentation-utils" :version "2019-07-11" :source "quicklisp" :systems
  ("documentation-utils"))
 ("form-fiddle" :version "2019-07-11" :source "quicklisp" :systems
  ("form-fiddle"))
-("iterate" :version "2021-05-31" :source "quicklisp" :systems ("iterate"))
 ("parachute" :version "2021-10-21" :source "quicklisp" :systems ("parachute"))
 ("slime" :version "2020-12-20" :source "quicklisp" :systems ("swank"))
 ("sly" :version "2021-08-07" :source "quicklisp" :systems ("slynk"))
@@ -52,8 +51,12 @@
 :reverse-dependencies
 ("aoc2021.asd"
  ((:system :name "aoc2021/test/all") (:system :name "aoc2021/src/day-1"))
+ ((:system :name "aoc2021/test/all") (:system :name "aoc2021/src/day-2"))
+ ((:system :name "aoc2021/test/all") (:system :name "aoc2021/src/day-3"))
  ((:system :name "aoc2021/test") (:system :name "aoc2021/test/all"))
  ((:system :name "aoc2021") (:system :name "aoc2021/src/day-1"))
+ ((:system :name "aoc2021") (:system :name "aoc2021/src/day-2"))
+ ((:system :name "aoc2021") (:system :name "aoc2021/src/day-3"))
  (t (:asd-file :name "aoc2021.asd")))
 
 ("documentation-utils"
@@ -61,9 +64,6 @@
  ((:system :name "form-fiddle") (:system :name "documentation-utils")))
 
 ("form-fiddle" ((:system :name "parachute") (:system :name "form-fiddle")))
-
-("iterate"
- ((:system :name "aoc2021/.vscode/alive/fasl/tmp") (:system :name "iterate")))
 
 ("parachute" ((:system :name "aoc2021/test/all") (:system :name "parachute"))
  ((:system :name "aoc2021/test") (:system :name "parachute"))
