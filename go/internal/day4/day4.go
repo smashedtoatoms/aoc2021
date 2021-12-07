@@ -1,14 +1,17 @@
-package aoc
+package day4
 
 import (
 	"strconv"
 	"strings"
+
+	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
 type bingoCard = []map[int]bool
 
+// RunDay4 calculates the Bingo score multiple games of bingo.
 func RunDay4(path string) (int, int) {
-	lines := getLines(path, "inputs/day4.txt")
+	lines := shared.GetLines(path, "inputs/day4.txt")
 	numbers := parseBingoNumbers(lines[0])
 	cards := parseBingoCards(lines)
 

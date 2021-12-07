@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	aoc "smashedtoatoms.com/aoc2021"
+	"smashedtoatoms.com/aoc2021/internal/day4"
+	"smashedtoatoms.com/aoc2021/internal/day5"
+	"smashedtoatoms.com/aoc2021/internal/day6"
+	"smashedtoatoms.com/aoc2021/internal/day7"
 )
 
 func main() {
@@ -22,13 +25,13 @@ func main() {
 
 	switch day {
 	case "4":
-		fmt.Println(aoc.RunDay4(path))
+		fmt.Println(day4.RunDay4(path))
 	case "5":
-		fmt.Println(aoc.RunDay5(path))
+		fmt.Println(day5.RunDay5(path))
 	case "6":
-		fmt.Println(aoc.RunDay6(path))
+		fmt.Println(day6.RunDay6(path))
 	case "7":
-		fmt.Println(aoc.RunDay7(path))
+		fmt.Println(day7.RunDay7(path))
 	default:
 		fmt.Println("No implementation for day specified")
 	}

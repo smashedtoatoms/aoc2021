@@ -1,4 +1,4 @@
-package aoc
+package day4
 
 import (
 	"testing"
@@ -30,10 +30,10 @@ func Test1(t *testing.T) {
 	}
 	numbers := []int{7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24, 10, 16, 13, 6, 15, 25, 12, 22, 18, 20, 8, 19, 3, 26, 1}
 	gamesToPlay := 1
-	score := getScoreForFinishedCard(cards, numbers, gamesToPlay)
+	out := getScoreForFinishedCard(cards, numbers, gamesToPlay)
 	expected := 2256
-	if score != expected {
-		t.Errorf("wrong score: got %d, expected %d", score, expected)
+	if out != expected {
+		t.Errorf("wrong result: got %d, expected %d", out, expected)
 		return
 	}
 }
@@ -64,10 +64,10 @@ func Test2(t *testing.T) {
 	}
 	numbers := []int{7, 4, 9, 5, 11, 17, 23, 2, 0, 14, 21, 24, 10, 16, 13, 6, 15, 25, 12, 22, 18, 20, 8, 19, 3, 26, 1}
 	gamesToPlay := 3
-	score := getScoreForFinishedCard(cards, numbers, gamesToPlay)
+	out := getScoreForFinishedCard(cards, numbers, gamesToPlay)
 	expected := 540
-	if score != expected {
-		t.Errorf("wrong score: got %d, expected %d", score, expected)
+	if out != expected {
+		t.Errorf("wrong result: got %d, expected %d", out, expected)
 		return
 	}
 }

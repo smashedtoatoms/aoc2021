@@ -1,13 +1,16 @@
-package aoc
+package day6
 
 import (
 	"fmt"
 	"strings"
+
+	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
+// RunDay6 counts lanternfish as they breed over time.
 func RunDay6(path string) (int, int) {
-	lines := getLines(path, "inputs/day6.txt")
-	inputData, err := stringsToInts(strings.Split(lines[0], ","))
+	lines := shared.GetLines(path, "inputs/day6.txt")
+	inputData, err := shared.StringsToInts(strings.Split(lines[0], ","))
 	if err != nil {
 		panic(err)
 	}

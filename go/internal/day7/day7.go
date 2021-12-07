@@ -1,12 +1,16 @@
-package aoc
+package day7
 
 import (
 	"strconv"
 	"strings"
+
+	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
+// RunDay7 finds the cheapest position to launch a spacecraft to based on
+// internal calculations and crab calculations.
 func RunDay7(path string) (int, int) {
-	lines := getLines(path, "inputs/day7.txt")
+	lines := shared.GetLines(path, "inputs/day7.txt")
 	positions, err := lineToCrabPositions(lines[0])
 	if err != nil {
 		panic(err)
@@ -17,19 +21,19 @@ func RunDay7(path string) (int, int) {
 
 func findCheapestFuelCost(positions []int, shouldUseCrabCalculation bool) int {
 	fuelCosts := make(map[int]int)
-	min := min(positions)
-	max := max(positions)
+	min := shared.Min(positions)
+	max := shared.Max(positions)
 	for i := min; i < max; i++ {
 		for _, position := range positions {
 			if _, ok := fuelCosts[i]; !ok {
 				fuelCosts[i] = 0
 			}
 			if shouldUseCrabCalculation {
-				for j := 1; j <= abs(position-i); j++ {
+				for j := 1; j <= shared.Abs(position-i); j++ {
 					fuelCosts[i] += j
 				}
 			} else {
-				fuelCosts[i] += abs(position - i)
+				fuelCosts[i] += shared.Abs(position - i)
 			}
 		}
 	}

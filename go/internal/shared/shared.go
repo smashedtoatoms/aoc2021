@@ -1,25 +1,23 @@
-package aoc
+package shared
 
 import (
 	"os"
-	"path/filepath"
-	"runtime"
 	"strconv"
 	"strings"
 )
 
-func getLines(path string, fallback string) []string {
+func GetLines(path string, fallback string) []string {
 	if path == "" {
 		path = fallback
 	}
-
-	_, b, _, _ := runtime.Caller(0)
-	fullpath := filepath.Join(filepath.Dir(b), path)
-	data, _ := os.ReadFile(fullpath)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		panic(err)
+	}
 	return strings.Split(strings.ReplaceAll(string(data), "\r\n", "\n"), "\n")
 }
 
-func filterStrings(s []string, toFilter string) []string {
+func FilterStrings(s []string, toFilter string) []string {
 	var r []string
 	for _, str := range s {
 		if str != toFilter {
@@ -29,7 +27,7 @@ func filterStrings(s []string, toFilter string) []string {
 	return r
 }
 
-func stringsToInts(ss []string) ([]int, error) {
+func StringsToInts(ss []string) ([]int, error) {
 	var out []int
 	for _, v := range ss {
 		n, err := strconv.Atoi(v)
@@ -41,7 +39,7 @@ func stringsToInts(ss []string) ([]int, error) {
 	return out, nil
 }
 
-func min(xs []int) int {
+func Min(xs []int) int {
 	var y int
 	for _, x := range xs {
 		if x < y || y == 0 {
@@ -51,7 +49,7 @@ func min(xs []int) int {
 	return y
 }
 
-func max(xs []int) int {
+func Max(xs []int) int {
 	var y int
 	for _, x := range xs {
 		if x > y {
@@ -61,7 +59,7 @@ func max(xs []int) int {
 	return y
 }
 
-func abs(x int) int {
+func Abs(x int) int {
 	if x < 0 {
 		return -x
 	}
