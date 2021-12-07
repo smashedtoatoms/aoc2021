@@ -40,3 +40,30 @@ func stringsToInts(ss []string) ([]int, error) {
 	}
 	return out, nil
 }
+
+func min(xs []int) int {
+	var y int
+	for _, x := range xs {
+		if x < y || y == 0 {
+			y = x
+		}
+	}
+	return y
+}
+
+func max(xs []int) int {
+	var y int
+	for _, x := range xs {
+		if x > y {
+			y = x
+		}
+	}
+	return y
+}
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
