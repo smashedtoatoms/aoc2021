@@ -12,8 +12,8 @@ type coordinate struct {
 	Y int
 }
 
-// RunDay5 finds vent overlaps based on the input provided.
-func RunDay5(path string) (int, int) {
+// Run finds vent overlaps based on the input provided.
+func Run(path string) (int, int) {
 	lines := shared.FilterStrings(shared.GetLines(path, "inputs/day5.txt"), "")
 	return findVentOverlaps(lines, true), findVentOverlaps(lines, false)
 }

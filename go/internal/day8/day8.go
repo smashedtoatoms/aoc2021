@@ -15,9 +15,9 @@ type samplesAndDisplays struct {
 	Displays []string
 }
 
-// Day8 takes one list of sample strings to determine the values of display
+// Run takes one list of sample strings to determine the values of display
 // numbers, and then calculates the display number and sums them all.
-func RunDay8(path string) (int, int) {
+func Run(path string) (int, int) {
 	lines := shared.GetLines(path, "inputs/day8.txt")
 	samplesAndData := getSamplesAndDisplays(lines)
 	knownCount := countKnownDisplays(samplesAndData)

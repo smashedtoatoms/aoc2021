@@ -9,8 +9,8 @@ import (
 
 type bingoCard = []map[int]bool
 
-// RunDay4 calculates the Bingo score multiple games of bingo.
-func RunDay4(path string) (int, int) {
+// Run calculates the Bingo score multiple games of bingo.
+func Run(path string) (int, int) {
 	lines := shared.GetLines(path, "inputs/day4.txt")
 	numbers := parseBingoNumbers(lines[0])
 	cards := parseBingoCards(lines)

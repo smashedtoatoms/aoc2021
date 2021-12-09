@@ -7,9 +7,9 @@ import (
 	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
-// RunDay7 finds the cheapest position to launch a spacecraft to based on
+// Run finds the cheapest position to launch a spacecraft to based on
 // internal calculations and crab calculations.
-func RunDay7(path string) (int, int) {
+func Run(path string) (int, int) {
 	lines := shared.GetLines(path, "inputs/day7.txt")
 	positions, err := lineToCrabPositions(lines[0])
 	if err != nil {

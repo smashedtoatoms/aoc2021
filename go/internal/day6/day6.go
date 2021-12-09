@@ -7,8 +7,8 @@ import (
 	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
-// RunDay6 counts lanternfish as they breed over time.
-func RunDay6(path string) (int, int) {
+// Run counts lanternfish as they breed over time.
+func Run(path string) (int, int) {
 	lines := shared.GetLines(path, "inputs/day6.txt")
 	inputData, err := shared.StringsToInts(strings.Split(lines[0], ","))
 	if err != nil {
