@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"smashedtoatoms.com/aoc2021/internal/day10"
 	"smashedtoatoms.com/aoc2021/internal/day4"
 	"smashedtoatoms.com/aoc2021/internal/day5"
 	"smashedtoatoms.com/aoc2021/internal/day6"
@@ -38,6 +39,8 @@ func main() {
 		fmt.Println(day8.Run(path))
 	case "9":
 		fmt.Println(day9.Run(path))
+	case "10":
+		fmt.Println(day10.Run(path))
 	default:
 		fmt.Println("No implementation for day specified")
 	}

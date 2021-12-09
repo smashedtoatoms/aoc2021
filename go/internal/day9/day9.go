@@ -2,9 +2,7 @@ package day9
 
 import (
 	"sort"
-	"strconv"
 
-	"github.com/pkg/errors"
 	"smashedtoatoms.com/aoc2021/internal/shared"
 )
 
@@ -22,7 +20,7 @@ type lowPoint struct {
 
 // Run to find risk level and large low-lying places to avoid.
 func Run(path string) (int, int) {
-	elevations, err := splitToInts(shared.GetLines(path, "inputs/day9.txt"))
+	elevations, err := shared.SplitToInts(shared.GetLines(path, "inputs/day9.txt"))
 	if err != nil {
 		panic(err)
 	}
@@ -137,20 +135,4 @@ func isValidPoint(m [][]int, c coordinate) bool {
 	goodX := 0 <= c.X && c.X < len(m)
 	goodY := 0 <= c.Y && c.Y < len(m[0])
 	return goodX && goodY
-}
-
-func splitToInts(lines []string) ([][]int, error) {
-	ints := make([][]int, len(lines)-1)
-	for i, line := range lines {
-		if len(line) > 0 {
-			for _, r := range line {
-				n, err := strconv.Atoi(string(r))
-				if err != nil {
-					return nil, errors.Wrap(err, "failed to split string to ints")
-				}
-				ints[i] = append(ints[i], n)
-			}
-		}
-	}
-	return ints, nil
 }

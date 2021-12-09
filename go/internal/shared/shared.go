@@ -4,6 +4,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/pkg/errors"
 )
 
 func GetLines(path string, fallback string) []string {
@@ -42,6 +44,22 @@ func IntsContain(xs []int, x int) bool {
 		}
 	}
 	return false
+}
+
+func SplitToInts(lines []string) ([][]int, error) {
+	ints := make([][]int, len(lines)-1)
+	for i, line := range lines {
+		if len(line) > 0 {
+			for _, r := range line {
+				n, err := strconv.Atoi(string(r))
+				if err != nil {
+					return nil, errors.Wrap(err, "failed to split string to ints")
+				}
+				ints[i] = append(ints[i], n)
+			}
+		}
+	}
+	return ints, nil
 }
 
 func StringsContain(xs []string, x string) bool {
