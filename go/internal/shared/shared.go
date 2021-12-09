@@ -27,6 +27,32 @@ func FilterStrings(s []string, toFilter string) []string {
 	return r
 }
 
+func GetKeys(xs map[string]string) []string {
+	out := make([]string, 0, len(xs))
+	for k := range xs {
+		out = append(out, k)
+	}
+	return out
+}
+
+func IntsContain(xs []int, x int) bool {
+	for _, y := range xs {
+		if x == y {
+			return true
+		}
+	}
+	return false
+}
+
+func StringsContain(xs []string, x string) bool {
+	for _, y := range xs {
+		if x == y {
+			return true
+		}
+	}
+	return false
+}
+
 func StringsToInts(ss []string) ([]int, error) {
 	var out []int
 	for _, v := range ss {

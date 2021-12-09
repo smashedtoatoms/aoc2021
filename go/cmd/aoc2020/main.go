@@ -8,6 +8,7 @@ import (
 	"smashedtoatoms.com/aoc2021/internal/day5"
 	"smashedtoatoms.com/aoc2021/internal/day6"
 	"smashedtoatoms.com/aoc2021/internal/day7"
+	"smashedtoatoms.com/aoc2021/internal/day8"
 )
 
 func main() {
@@ -32,6 +33,8 @@ func main() {
 		fmt.Println(day6.RunDay6(path))
 	case "7":
 		fmt.Println(day7.RunDay7(path))
+	case "8":
+		fmt.Println(day8.RunDay8(path))
 	default:
 		fmt.Println("No implementation for day specified")
 	}

@@ -16,7 +16,9 @@ In doing so, I learned enough about the Common Lisp ecosystem for me to
 actually get something done this year... or so I thought.  I got 3 done
 before I got so lost in Common Lisp for-loop macros that I bailed out to
 Go so I could actually get something done in under an hour and not be a
-zombie at work and life due to staying up until 3 working on AOC.
+zombie at work and life due to staying up until 3 working on AOC.  If I
+could figure out how to efficiently use the loop macro, it seems
+powerful, but it's challenging to get right.
 
 I guess I will have to put some more time in on Lisp.  It is
 legitimately different enough that I can't just force myself through it
