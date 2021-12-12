@@ -8,6 +8,14 @@ import (
 	"github.com/pkg/errors"
 )
 
+func CopyStringIntMap(visits map[string]int) map[string]int {
+	res := make(map[string]int, len(visits))
+	for k, v := range visits {
+		res[k] = v
+	}
+	return res
+}
+
 func GetLines(path string, fallback string) []string {
 	if path == "" {
 		path = fallback
@@ -60,6 +68,16 @@ func SplitToInts(lines []string) ([][]int, error) {
 		}
 	}
 	return ints, nil
+}
+
+func SplitToStrings(lines []string, sep string) [][]string {
+	matrix := make([][]string, len(lines)-1)
+	for i, line := range lines {
+		if len(line) > 0 {
+			matrix[i] = append(matrix[i], strings.Split(line, sep)...)
+		}
+	}
+	return matrix
 }
 
 func StringsContain(xs []string, x string) bool {
