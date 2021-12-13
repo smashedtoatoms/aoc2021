@@ -24,6 +24,10 @@ I guess I will have to put some more time in on Lisp.  It is
 legitimately different enough that I can't just force myself through it
 like I can with most new languages I learn.
 
+I got to day 12 this year before calling it.  I don't have enough time
+in my day to do this, work, music, side-projects, etc.  I have decided
+that this one isn't going to make the cut.  I feel appropriately guilty.
+
 ## How To Dev in Common Lisp
 
 ### Prerequisites
